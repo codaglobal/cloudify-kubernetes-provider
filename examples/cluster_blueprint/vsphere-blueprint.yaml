@@ -168,7 +168,7 @@ node_templates:
             public_master_ip: { get_attribute: [ k8s_master_host, ip ] }
           outputs:
             deployment-type: deployment-type
-            deployemnt-node-data-type: deployemnt-node-data-type
+            deployment-node-data-type: deployment-node-data-type
 
     relationships:
       - type: cloudify.relationships.depends_on
@@ -190,7 +190,7 @@ node_templates:
           id: k8s_lb_dep
           outputs:
             deployment-type: deployment-type
-            deployemnt-node-data-type: deployemnt-node-data-type
+            deployment-node-data-type: deployment-node-data-type
 
     relationships:
       - type: cloudify.relationships.depends_on

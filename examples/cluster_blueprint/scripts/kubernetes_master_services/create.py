@@ -215,7 +215,7 @@ def get_kubernetes_deployment_info(relationships, rel_type, target_type):
                 # Deployment type (Load Balancer or Node)
                 dep_type = dep_outputs['deployment-type']
                 # Node Data Type (kubernetes Node or kubernetes load balancer)
-                node_data_type = dep_outputs['deployemnt-node-data-type']
+                node_data_type = dep_outputs['deployment-node-data-type']
 
                 ctx.logger.info(
                     'Deployment node data type: {0}'.format(node_data_type))
@@ -284,7 +284,7 @@ def setup_kubernetes_node_data_type():
     else:
         dep_outputs = response.get('outputs')
         ctx.logger.debug('Deployment outputs: {0}'.format(dep_outputs))
-        node_data_type = dep_outputs.get('deployemnt-node-data-type')
+        node_data_type = dep_outputs.get('deployment-node-data-type')
 
         if node_data_type:
             os.environ['CFY_K8S_NODE_TYPE'] = node_data_type
